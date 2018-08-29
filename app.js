@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 var passport = require('passport');
-var config = require('./config/database');
+var dbConfig = require('./config/database');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -15,8 +15,9 @@ var app = express();
 
 // Connecting to DB
 mongoose.Promise = require('bluebird');
-mongoose.connect(config.database, {
-    promiseLibrary: require('bluebird')
+mongoose.connect(dbConfig.database, {
+    promiseLibrary: require('bluebird'),
+    useNewUrlParser: true
   })
   .then(() => console.log('connection succesful'))
   .catch((err) => console.error(err));

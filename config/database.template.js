@@ -1,4 +1,4 @@
 module.exports = {
-  'secret': 'mysecurestring',
-  'database': 'mongodb://localhost:27017/mydatabase'
+  'secret': 'mysecuritstring',
+  'database': 'mongodb://database/matsuri'
 };
