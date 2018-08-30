@@ -3,11 +3,6 @@ var router = express.Router();
 var passport = require('passport');
 var Item = require('../models/Item')
 
-/* GET items listing. */
-router.get('/', function (req, res, next) {
-  res.send('respond with a resource');
-});
-
 router.post('/', passport.authenticate('jwt', {
   session: false
 }), function (req, res) {
@@ -58,5 +53,18 @@ router.get('/', passport.authenticate('jwt', {
     });
   }
 });
+
+getToken = function (headers) {
+  if (headers && headers.authorization) {
+    var parted = headers.authorization.split(' ');
+    if (parted.length === 2) {
+      return parted[1];
+    } else {
+      return null;
+    }
+  } else {
+    return null;
+  }
+};
 
 module.exports = router;

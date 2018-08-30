@@ -1,6 +1,11 @@
 # matsuri-server
 Matsuri cash flow - server side
 
+## Configurations
+
+1. do a copy of database.template.js to database.js
+1. change the secret
+
 To test:
 ```bash
 $ docker build -t matsuri-server:dev .
@@ -23,3 +28,6 @@ $ docker-compose up --build
 
 ### Users
 
+- base url: /api/v1/users
+- register: /api/v1/users/signup
+- log in: /api/v1/users/signin
