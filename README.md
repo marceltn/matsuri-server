@@ -28,6 +28,10 @@ $ docker-compose up --build
 
 ### Users
 
-- base url: /api/v1/users
-- register: /api/v1/users/signup
-- log in: /api/v1/users/signin
+- base url: /users
+- register: /users/signup
+- log in: /users/signin
+
+### Items
+
+- base url: /items

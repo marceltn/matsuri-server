@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
-var Item = require('../models/Item')
+require('../config/passport')(passport);
+var Item = require('../models/Item');
 
 router.post('/', passport.authenticate('jwt', {
   session: false
