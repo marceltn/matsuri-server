@@ -4,15 +4,13 @@ Matsuri cash flow - server side
 ## Configurations
 
 1. do a copy of database.template.js to database.js
-1. change the secret
+1. inside database.js file
+    1. change the secret
+    1. configure the mongodb endpoint
 
 To test:
 ```bash
 $ docker build -t matsuri-server:dev .
-$ docker run --rm --name matsuri-server -p 3000:3000 matsuri-server:dev
-Access http://localhost:3000/
-
-$ docker stop express-server
 $ docker-compose up
 ```
 

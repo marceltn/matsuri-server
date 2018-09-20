@@ -2,7 +2,7 @@ FROM node:carbon
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY package.json /usr/src/app
-RUN npm install
+RUN yarn
 COPY . /usr/src/app
 EXPOSE 3000
-CMD ["npm", "start"]
+CMD ["yarn", "run", "start"]
