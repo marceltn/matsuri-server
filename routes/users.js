@@ -56,7 +56,7 @@ router.post('/signin', function (req, res) {
           // return the information including token as JSON
           res.json({
             success: true,
-            token: 'JWT ' + token
+            token: token
           });
         } else {
           res.status(401).send({
